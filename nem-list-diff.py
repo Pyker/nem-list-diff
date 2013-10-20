@@ -33,21 +33,21 @@ for mod in set(a) & set(b):
 
 print "Unique in A (total %d):" % len(unique_a)
 for mod in sorted(unique_a, key=lambda s: s.lower()):
-    print mod
+    print mod.encode("utf-8")
 print
 
 print "Unique in B (total %d):" % len(unique_b)
 for mod in sorted(unique_b, key=lambda s: s.lower()):
-    print mod
+    print mod.encode("utf-8")
 print
 
 print "Common mods, same information (total %d):" % len(equals)
 for mod in sorted(equals, key=lambda s: s.lower()):
-    print mod
+    print mod.encode("utf-8")
 print
 
 print "Common mods, different info (total %d):" % len(diffs)
 for mod, values in OrderedDict(sorted(diffs.items(), key=lambda s: s[0].lower())).iteritems():
-    print "%s:" % mod
+    print "%s:" % mod.encode("utf-8")
     for k, v in values.iteritems():
         print "    %s: %s -> %s" % (k, v[0] if v[0] else 'None', v[1] if v[1] else 'None')
